@@ -23,11 +23,11 @@ class Recipe(BaseModel):
 
 session = boto3.Session(
 
-       region_name='SELECTED_REGION'
+       region_name='ap-northeast-1'
    )
 
 dynamodb = session.resource('dynamodb')
-table = dynamodb.Table('recipes')
+table = dynamodb.Table('Cloud-Project-Recipes-Sharing')
 
 # Configure CORS
 origins = [
