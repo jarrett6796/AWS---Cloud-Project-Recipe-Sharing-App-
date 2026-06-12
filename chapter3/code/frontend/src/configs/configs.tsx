@@ -7,4 +7,5 @@ export const appConfig = {
   title: "My Recipe Sharing App",
   iconFileName: "ch3_link.png",
 };
-export const API_URL = "http://127.0.0.1:8000";
+
+export const API_URL = "https://d2lpuqhqfesoy2.cloudfront.net";
