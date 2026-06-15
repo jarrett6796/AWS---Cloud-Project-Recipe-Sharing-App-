@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import uuid
 import boto3
+import os
 
 
 class Ingredient(BaseModel):
@@ -27,7 +28,13 @@ session = boto3.Session(
    )
 
 dynamodb = session.resource('dynamodb')
-table = dynamodb.Table('Cloud-Project-Recipes-Sharing')
+
+TABLE_NAME = os.getenv(
+    "TABLE_NAME",
+    "Cloud-Project-Recipes-Sharing"
+)
+
+table = dynamodb.Table(TABLE_NAME)
 
 # Configure CORS
 origins = [
